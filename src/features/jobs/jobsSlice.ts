@@ -1,12 +1,15 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
-import { Job } from "../../types/job";
+import { FetchJobsResponse } from "../../types/job";
 
 export const jobsApi = createApi({
   reducerPath: "jobsApi",
   baseQuery: fetchBaseQuery({ baseUrl: process.env.REACT_APP_BASE_API_URL }),
   tagTypes: ["Jobs"],
   endpoints: (builder) => ({
-    getJobs: builder.query<Job[], { page?: number; limit?: number }>({
+    getJobs: builder.query<
+      { results: FetchJobsResponse },
+      { page?: number; limit?: number }
+    >({
       query: ({ page = 0, limit = 10 }) => ({
         url: `/jobs`,
         headers: {
