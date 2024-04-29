@@ -21,11 +21,9 @@ export const JobsList: FC<Props> = () => {
   const totalPages = data?.results?.pages;
   const jobs = data?.results?.jobs;
 
-  if (isLoading) return "Loading...";
-
-  if (isError) return "Error Happened";
-
-  if (!jobs?.length) return "Sorry, we can't find any jobs for you";
+  if (isLoading) return <div>Loading</div>;
+  if (isError) return <div>Error Happened</div>;
+  if (!jobs?.length) return <div>Sorry, we can't find any jobs for you</div>;
 
   return (
     <Container maxWidth="xl">
