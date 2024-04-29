@@ -15,32 +15,17 @@ export const JobsList: FC<Props> = () => {
     itemQuery: useSelector((state: RootState) => state.search.term),
   });
 
-  const handlePageChange = (e: React.ChangeEvent<unknown>, page: number) => {
+  const handlePageChange = (_: React.ChangeEvent<unknown>, page: number) =>
     setCurrentPage(page - 1);
-    console.log(e, page);
-  };
 
-  const totalPages = data?.results?.pages; // Assuming total pages from API response
+  const totalPages = data?.results?.pages;
   const jobs = data?.results?.jobs;
 
-  if (isLoading)
-    return (
-      <Container maxWidth="xl" sx={{ my: 4 }}>
-        Loading...
-      </Container>
-    );
-  if (isError)
-    return (
-      <Container maxWidth="xl" sx={{ my: 4 }}>
-        Error fetching data
-      </Container>
-    );
-  if (!jobs?.length)
-    return (
-      <Container maxWidth="xl" sx={{ my: 4 }}>
-        Sorry, we did not found any jobs for you
-      </Container>
-    );
+  if (isLoading) return "Loading...";
+
+  if (isError) return "Error Happened";
+
+  if (!jobs?.length) return "Sorry, we can't find any jobs for you";
 
   return (
     <Container maxWidth="xl">
