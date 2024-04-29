@@ -1,6 +1,9 @@
 .jobsfilter {
   background-color: white;
   border: 1px solid var(--border);
-  padding: 1rem 0;
+  padding: 1rem;
   border-radius: 0 0 1rem 1rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
 }

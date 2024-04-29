@@ -24,5 +24,5 @@ export const JobsList: FC<Props> = () => {
   if (isError) return <div>Error fetching data</div>;
   if (!jobs?.length) return <div>Sorry, we did not found any jobs for you</div>;
 
-  return <div></div>;
+  return <div>{JSON.stringify(jobs)}</div>;
 };
