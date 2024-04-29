@@ -3,6 +3,7 @@ import { FC, useState } from "react";
 import { useSelector } from "react-redux";
 import { useGetJobsQuery } from "../../../features/jobs/jobsSlice";
 import { RootState } from "../../../features/store";
+import styles from './jobs-list.module.css';
 
 interface Props {}
 
@@ -45,7 +46,7 @@ export const JobsList: FC<Props> = () => {
     <Container maxWidth="xl">
       {JSON.stringify(jobs)}
       <Pagination
-        sx={{ placeContent: "center", my: 4 }}
+        className={styles.pagination}
         count={totalPages}
         color="primary"
         page={currentPage + 1}
