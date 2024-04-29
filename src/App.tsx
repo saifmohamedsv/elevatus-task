@@ -1,11 +1,12 @@
+import { Box } from "@mui/material";
 import { JobsFilter, JobsList } from "./components/common";
 
 function App() {
   return (
-    <div style={{ minHeight: "200vg" }}>
+    <Box sx={{ minHeight: "200vh" }}>
       <JobsFilter />
       <JobsList />
-    </div>
+    </Box>
   );
 }
 
