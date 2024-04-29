@@ -1,9 +1,9 @@
-import "./App.css";
-import { JobsList } from "./components/common";
+import { JobsFilter, JobsList } from "./components/common";
 
 function App() {
   return (
-    <div className="App">
+    <div style={{ minHeight: "200vg" }}>
+      <JobsFilter />
       <JobsList />
     </div>
   );
