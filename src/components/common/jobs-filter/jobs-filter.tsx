@@ -6,7 +6,7 @@ import { useAppDispatch } from "../../../features/store";
 import styles from "./jobs-filter.module.css";
 interface JobsFilterProps {}
 
-export const JobsFilter: FC<JobsFilterProps> = ({}) => {
+export const JobsFilter: FC<JobsFilterProps> = () => {
   const dispatch = useAppDispatch();
   const [searchTerm, setSearchTerm] = useState("");
 

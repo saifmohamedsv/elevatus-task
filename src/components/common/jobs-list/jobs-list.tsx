@@ -22,9 +22,24 @@ export const JobsList: FC<Props> = () => {
   const totalPages = data?.results?.pages; // Assuming total pages from API response
   const jobs = data?.results?.jobs;
 
-  if (isLoading) return <div>Loading...</div>;
-  if (isError) return <div>Error fetching data</div>;
-  if (!jobs?.length) return <div>Sorry, we did not found any jobs for you</div>;
+  if (isLoading)
+    return (
+      <Container maxWidth="xl" sx={{ my: 4 }}>
+        Loading...
+      </Container>
+    );
+  if (isError)
+    return (
+      <Container maxWidth="xl" sx={{ my: 4 }}>
+        Error fetching data
+      </Container>
+    );
+  if (!jobs?.length)
+    return (
+      <Container maxWidth="xl" sx={{ my: 4 }}>
+        Sorry, we did not found any jobs for you
+      </Container>
+    );
 
   return (
     <Container maxWidth="xl">
