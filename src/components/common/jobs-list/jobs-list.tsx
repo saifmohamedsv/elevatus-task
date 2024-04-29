@@ -1,9 +1,9 @@
-import { Container, Pagination } from "@mui/material";
+import { Container, Pagination, Typography } from "@mui/material";
 import { FC, useState } from "react";
 import { useSelector } from "react-redux";
 import { useGetJobsQuery } from "../../../features/jobs/jobsSlice";
 import { RootState } from "../../../features/store";
-import styles from './jobs-list.module.css';
+import styles from "./jobs-list.module.css";
 
 interface Props {}
 
@@ -44,6 +44,9 @@ export const JobsList: FC<Props> = () => {
 
   return (
     <Container maxWidth="xl">
+      <Typography variant="h4" my={4} fontWeight={900}>
+        Recent Openings
+      </Typography>
       {JSON.stringify(jobs)}
       <Pagination
         className={styles.pagination}
