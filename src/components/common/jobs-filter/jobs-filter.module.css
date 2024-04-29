@@ -7,3 +7,10 @@
   align-items: center;
   gap: 1rem;
 }
+
+@media (max-width: 768px) {
+  .jobsfilter {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
