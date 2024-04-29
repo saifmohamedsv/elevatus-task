@@ -8,9 +8,9 @@ export const jobsApi = createApi({
   endpoints: (builder) => ({
     getJobs: builder.query<
       { results: FetchJobsResponse },
-      { page?: number; limit?: number }
+      { page?: number; limit?: number; itemQuery: string }
     >({
-      query: ({ page = 0, limit = 10 }) => ({
+      query: ({ page = 0, limit = 10, itemQuery = "" }) => ({
         url: `/jobs`,
         headers: {
           "accept-account": process.env.REACT_APP_ACCEPT_ACCOUNT,
@@ -21,6 +21,7 @@ export const jobsApi = createApi({
           language_profile_uuid: "ee5d991c-cdc6-4e83-b0b3-96f147208549",
           page,
           limit,
+          itemQuery,
         },
       }),
       providesTags: ["Jobs"],
