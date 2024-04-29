@@ -3,6 +3,7 @@ import { FC, useState } from "react";
 import { useSelector } from "react-redux";
 import { useGetJobsQuery } from "../../../features/jobs/jobsSlice";
 import { RootState } from "../../../features/store";
+import JobCard from "../job-card/job-card";
 import { JobsLoadingSkeleton } from "../jobs-loading-skeleton";
 import styles from "./jobs-list.module.css";
 
@@ -30,10 +31,10 @@ export const JobsList: FC<Props> = () => {
         Recent Openings
       </Typography>
 
-      <Box sx={{ flexWrap: "wrap", display: "flex", gap: 4 }}>
+      <Box sx={{ flexWrap: "wrap", display: "flex", gap: 2 }}>
         {(isLoading ? Array.from(new Array(20)) : jobs).map((job, idx) => (
           <div>
-            {job && job.title}
+            {job && <JobCard {...job} />}
             {!job && <JobsLoadingSkeleton />}
           </div>
         ))}
