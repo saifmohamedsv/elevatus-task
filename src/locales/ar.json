@@ -1,4 +1,7 @@
 {
+  "navbar": {
+    "title": "Elevatus"
+  },
   "job_filter": {
     "label": "عنوان الوظيفة",
     "placeholder": "مثال: مطور React",

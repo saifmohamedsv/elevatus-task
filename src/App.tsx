@@ -2,6 +2,7 @@ import { Box } from "@mui/material";
 import { useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import { JobsFilter, JobsList } from "./components/common";
+import { Navbar } from "./components/layout";
 
 function App() {
   const { i18n } = useTranslation();
@@ -13,6 +14,7 @@ function App() {
 
   return (
     <Box>
+      <Navbar />
       <JobsFilter />
       <JobsList />
     </Box>

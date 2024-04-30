@@ -18,8 +18,8 @@ export const JobsFilter: FC<JobsFilterProps> = () => {
         <TextField
           sx={{ flex: 1, width: "100%" }}
           id="outlined-basic"
-          label="Job Title"
-          placeholder="eg: React Developer"
+          label={t("job_filter.label")}
+          placeholder={t("job_filter.placeholder")}
           variant="outlined"
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
