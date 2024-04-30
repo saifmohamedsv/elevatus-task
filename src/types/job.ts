@@ -28,7 +28,7 @@ export interface Job {
   };
   gender: string;
   description: string;
-  requirements: any;
+  requirements: string[];
   translations: any[];
   skills: any[];
   uri: string;

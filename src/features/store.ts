@@ -3,14 +3,16 @@ import { setupListeners } from "@reduxjs/toolkit/query/react";
 import jobsApi from "../features/jobs/jobsSlice";
 import searchSlice from "./search/searchSlice";
 import { useDispatch, useSelector, useStore } from 'react-redux';
+import jobApi from "./jobs/jobSlice";
 
 export const store = configureStore({
   reducer: {
     [jobsApi.reducerPath]: jobsApi.reducer,
+    [jobApi.reducerPath]: jobApi.reducer, // Add the new reducer
     search: searchSlice,
   },
   middleware: (getDefaultMiddleware) =>
-    getDefaultMiddleware().concat(jobsApi.middleware),
+    getDefaultMiddleware().concat(jobsApi.middleware, jobApi.middleware),
 });
 
 setupListeners(store.dispatch);
