@@ -1,6 +1,6 @@
 import { Box } from "@mui/material";
 import { FC } from "react";
-import { JobsFilter, JobsList } from "../components/common";
+import { JobsFilter, JobsList } from "../../components/common";
 
 interface HomePageProps {}
 

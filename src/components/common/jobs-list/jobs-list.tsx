@@ -13,10 +13,12 @@ interface Props {}
 export const JobsList: FC<Props> = () => {
   const { t } = useTranslation();
   const [currentPage, setCurrentPage] = useState(0);
+  const searchTerm = useSelector((state: RootState) => state.search.term);
+
   const { data, isLoading, isError } = useGetJobsQuery({
     page: currentPage,
     limit: 10,
-    itemQuery: useSelector((state: RootState) => state.search.term),
+    itemQuery: searchTerm,
   });
 
   const handlePageChange = (_: React.ChangeEvent<unknown>, page: number) =>

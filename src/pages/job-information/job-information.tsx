@@ -1,4 +1,4 @@
-import { Button, Container, Divider, Paper } from "@mui/material";
+import { Box, Button, Container, Divider, Paper } from "@mui/material";
 import { FC, useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { useGetJobByUriQuery } from "../../features/jobs/jobSlice";
@@ -75,6 +75,7 @@ const job: Job = {
 const JobInformationPage: FC<JobInformationPageProps> = () => {
   const { id: uri } = useParams();
 
+  // Trying to fetch single job
   const {
     // data: job,
     refetch,
@@ -87,6 +88,8 @@ const JobInformationPage: FC<JobInformationPageProps> = () => {
   return (
     <Container className={styles.contianer} maxWidth="xl">
       {/* Side Bar */}
+      <Box>Scroll Bar</Box>
+
       <Paper elevation={0} className={styles["information-paper"]}>
         <Header title={job.title} posted_at={job.posted_at} />
         <Description description={job.description} />

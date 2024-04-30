@@ -3,7 +3,7 @@ import { useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import { Outlet, RouterProvider, createBrowserRouter } from "react-router-dom";
 import { Navbar } from "./components/layout";
-import HomePage from "./pages/home";
+import HomePage from "./pages/home/home";
 import JobInformationPage from "./pages/job-information/job-information";
 
 function App() {
