@@ -1,10 +1,6 @@
-import {
-  Container,
-  Divider,
-  Paper,
-} from "@mui/material";
+import { Button, Container, Divider, Paper } from "@mui/material";
 import { FC, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { useGetJobByUriQuery } from "../../features/jobs/jobSlice";
 import { Job } from "../../types/job";
 import {
@@ -78,6 +74,7 @@ const job: Job = {
 
 const JobInformationPage: FC<JobInformationPageProps> = () => {
   const { id: uri } = useParams();
+
   const {
     // data: job,
     refetch,
@@ -98,6 +95,13 @@ const JobInformationPage: FC<JobInformationPageProps> = () => {
         <Skills skills={job.skills} />
         <Divider sx={{ my: 4 }} />
         <Languages languages={job.languages} />
+        <Button
+          href={job.url}
+          variant="contained"
+          sx={{ mt: 4, maxWidth: 320, width: "100%", alignSelf: "flex-end" }}
+        >
+          Apply
+        </Button>
       </Paper>
     </Container>
   );
