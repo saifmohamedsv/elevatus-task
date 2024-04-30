@@ -1,4 +1,4 @@
-import { Box, Container, Pagination, Typography } from "@mui/material";
+import { Box, Container, Grid, Pagination, Typography } from "@mui/material";
 import { FC, useState } from "react";
 import { useSelector } from "react-redux";
 import { useGetJobsQuery } from "../../../features/jobs/jobsSlice";
@@ -31,13 +31,15 @@ export const JobsList: FC<Props> = () => {
         Recent Openings
       </Typography>
 
-      <Box sx={{ flexWrap: "wrap", display: "flex", gap: 2 }}>
-        {(isLoading ? Array.from(new Array(20)) : jobs).map((job, idx) => (
-          <div>
-            {job && <JobCard {...job} />}
-            {!job && <JobsLoadingSkeleton />}
-          </div>
-        ))}
+      <Box sx={{ flexGrow: 1 }}>
+        <Grid container spacing={2}>
+          {(isLoading ? Array.from(new Array(20)) : jobs).map((job, idx) => (
+            <Grid item xs={12} sm={6} md={4} lg={3}>
+              {job && <JobCard {...job} />}
+              {!job && <JobsLoadingSkeleton />}
+            </Grid>
+          ))}
+        </Grid>
       </Box>
 
       <Pagination
