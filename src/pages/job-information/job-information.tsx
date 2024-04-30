@@ -1,6 +1,8 @@
-import { Box, Button, Container, Divider, Paper } from "@mui/material";
+import { Box, Button, Container, Divider, Grid, Paper } from "@mui/material";
 import { FC, useEffect } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
+import { JobsList } from "../../components/common";
+import JobCard from "../../components/common/job-card/job-card";
 import { useGetJobByUriQuery } from "../../features/jobs/jobSlice";
 import { Job } from "../../types/job";
 import {
@@ -86,9 +88,49 @@ const JobInformationPage: FC<JobInformationPageProps> = () => {
   }, [uri, refetch]);
 
   return (
-    <Container className={styles.contianer} maxWidth="xl">
-      {/* Side Bar */}
-      <Box>Scroll Bar</Box>
+    <Container
+      sx={{
+        display: "flex",
+        position: "relative",
+        flexDirection: { xs: "column-reverse", md: "row" },
+        p: 4,
+        alignItems: "flex-start",
+        justifyContent: "center",
+        gap: 4,
+      }}
+      maxWidth="xl"
+    >
+      <Box
+        sx={{ display: { md: "flex", xs: "none" }, overflowY: "scroll" }}
+        top={12}
+        position={"sticky"}
+        display={"flex"}
+        flexDirection={"column"}
+        height={720}
+        gap={2}
+        flex={1}
+      >
+        <JobCard small {...job} />
+        <JobCard small {...job} />
+        <JobCard small {...job} />
+        <JobCard small {...job} />
+        <JobCard small {...job} />
+        <JobCard small {...job} />
+      </Box>
+
+      <Box sx={{ flexGrow: 1, display: { xs: "block", md: "none" } }}>
+        <Grid container spacing={4}>
+          <Grid item xs={12} sm={6} md={4} lg={3}>
+            <JobCard {...job} />
+          </Grid>
+          <Grid item xs={12} sm={6} md={4} lg={3}>
+            <JobCard {...job} />
+          </Grid>
+          <Grid item xs={12} sm={6} md={4} lg={3}>
+            <JobCard {...job} />
+          </Grid>
+        </Grid>
+      </Box>
 
       <Paper elevation={0} className={styles["information-paper"]}>
         <Header title={job.title} posted_at={job.posted_at} />
