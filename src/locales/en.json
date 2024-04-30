@@ -1,0 +1,12 @@
+{
+    "job_filter": {
+      "label": "Job Title",
+      "placeholder": "eg: React Developer",
+      "button-text": "Search"
+    },
+    "job_list": {
+      "title": "Recent Openings",
+      "action-button-text": "View"
+    }
+  }
+  

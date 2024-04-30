@@ -1,0 +1,11 @@
+{
+  "job_filter": {
+    "label": "عنوان الوظيفة",
+    "placeholder": "مثال: مطور React",
+    "button-text": "بحث"
+  },
+  "job_list": {
+    "title": "الوظائف الشاغرة الأخيرة",
+    "action-button-text": "عرض"
+  }
+}
