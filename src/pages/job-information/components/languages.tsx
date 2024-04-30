@@ -7,7 +7,7 @@ interface Props {
 }
 
 export const Languages: FC<Props> = ({ languages }) => {
-  const {t} = useTranslation();
+  const { t } = useTranslation();
 
   return (
     <Box>
