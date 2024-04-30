@@ -10,5 +10,13 @@
   "job_list": {
     "title": "الوظائف الشاغرة الأخيرة",
     "action-button-text": "عرض"
+  },
+  "job_info": {
+    "description": "الوصف",
+    "summary": "ملخص",
+    "skills": "المهارات المطلوبة",
+    "requirements": "المتطلبات",
+    "languages": "اللغات",
+    "apply": "تقديم الطلب"
   }
 }

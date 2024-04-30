@@ -10,5 +10,13 @@
   "job_list": {
     "title": "Recent Openings",
     "action-button-text": "View"
+  },
+  "job_info": {
+    "description": "Description",
+    "summary": "Summary",
+    "requirements": "Requirements",
+    "skills": "Required Skills",
+    "languages": "Languages",
+    "apply": "Apply"
   }
 }
