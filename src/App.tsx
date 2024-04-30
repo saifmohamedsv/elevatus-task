@@ -1,3 +1,4 @@
+import { ThemeProvider, createTheme } from "@mui/material";
 import { useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import { Outlet, RouterProvider, createBrowserRouter } from "react-router-dom";
@@ -35,10 +36,20 @@ function App() {
     },
   ]);
 
+  const theme = createTheme({
+    palette: {
+      primary: {
+        main: "#051274",
+      },
+    },
+  });
+
   return (
-    <div className="App">
-      <RouterProvider router={router} />
-    </div>
+    <ThemeProvider theme={theme}>
+      <div className="App">
+        <RouterProvider router={router} />
+      </div>
+    </ThemeProvider>
   );
 }
 

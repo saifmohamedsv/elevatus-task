@@ -9,7 +9,6 @@ const CustomPaper = styled(Paper)(({ theme }) => ({
   padding: theme.spacing(2),
   border: "1px solid var(--border)",
   borderRadius: "8px",
-  boxShadow: "0px 4px 12px rgba(0,0,0,0.1)",
 }));
 
 export const Summary: FC<Props> = () => (
@@ -17,7 +16,7 @@ export const Summary: FC<Props> = () => (
     <Typography mb={1} fontSize={20}>
       Summary
     </Typography>
-    <CustomPaper>
+    <CustomPaper elevation={0}>
       <Grid container spacing={3}>
         <Grid item xs={12} md={6}>
           <Typography variant="body1">Salary Range: 500 - 400</Typography>
