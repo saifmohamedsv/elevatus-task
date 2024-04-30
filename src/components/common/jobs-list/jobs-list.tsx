@@ -48,6 +48,7 @@ export const JobsList: FC<Props> = () => {
 
       <Pagination
         className={styles.pagination}
+        sx={{ display: "flex", placeContent: "center", m: "2rem 0" }}
         count={totalPages}
         color="primary"
         page={currentPage + 1}
