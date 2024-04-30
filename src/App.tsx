@@ -46,9 +46,7 @@ function App() {
 
   return (
     <ThemeProvider theme={theme}>
-      <div className="App">
-        <RouterProvider router={router} />
-      </div>
+      <RouterProvider router={router} />
     </ThemeProvider>
   );
 }
