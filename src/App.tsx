@@ -1,8 +1,9 @@
-import { Box } from "@mui/material";
 import { useEffect } from "react";
 import { useTranslation } from "react-i18next";
-import { JobsFilter, JobsList } from "./components/common";
+import { Outlet, RouterProvider, createBrowserRouter } from "react-router-dom";
 import { Navbar } from "./components/layout";
+import HomePage from "./pages/home";
+import JobInformationPage from "./pages/job-information";
 
 function App() {
   const { i18n } = useTranslation();
@@ -12,12 +13,32 @@ function App() {
     document.documentElement.dir = dir;
   }, [i18n, i18n.language]);
 
+  const HeaderLayout = () => (
+    <>
+      <header>
+        <Navbar />
+      </header>
+      <Outlet />
+    </>
+  );
+
+  const router = createBrowserRouter([
+    {
+      element: <HeaderLayout />,
+      children: [
+        { index: true, element: <HomePage /> },
+        {
+          path: "job/:id",
+          element: <JobInformationPage />,
+        },
+      ],
+    },
+  ]);
+
   return (
-    <Box>
-      <Navbar />
-      <JobsFilter />
-      <JobsList />
-    </Box>
+    <div className="App">
+      <RouterProvider router={router} />
+    </div>
   );
 }
 
