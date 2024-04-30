@@ -8,6 +8,7 @@ import {
   Typography,
 } from "@mui/material";
 import { FC } from "react";
+import { useTranslation } from "react-i18next";
 import { Job } from "../../../types/job";
 import styles from "./job-card.module.css";
 
@@ -15,6 +16,7 @@ interface JobCardProps extends Job {}
 
 const JobCard: FC<JobCardProps> = ({ title, location, career_level }) => {
   const city = location.city || "No city to show";
+  const { t } = useTranslation();
 
   return (
     <Card className={styles.card} elevation={0}>
@@ -34,7 +36,7 @@ const JobCard: FC<JobCardProps> = ({ title, location, career_level }) => {
       </CardContent>
       <CardActions>
         <Button variant="outlined" size="medium">
-          View
+          {t("job_list.action-button-text")}
         </Button>
       </CardActions>
     </Card>

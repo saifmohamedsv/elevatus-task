@@ -1,5 +1,6 @@
 import { Box, Container, Grid, Pagination, Typography } from "@mui/material";
 import { FC, useState } from "react";
+import { useTranslation } from "react-i18next";
 import { useSelector } from "react-redux";
 import { useGetJobsQuery } from "../../../features/jobs/jobsSlice";
 import { RootState } from "../../../features/store";
@@ -10,6 +11,7 @@ import styles from "./jobs-list.module.css";
 interface Props {}
 
 export const JobsList: FC<Props> = () => {
+  const { t } = useTranslation();
   const [currentPage, setCurrentPage] = useState(0);
   const { data, isLoading, isError } = useGetJobsQuery({
     page: currentPage,
@@ -28,7 +30,7 @@ export const JobsList: FC<Props> = () => {
   return (
     <Container maxWidth="xl">
       <Typography mb={4} mt={2} fontWeight={600} sx={{ fontSize: 28 }}>
-        Recent Openings
+        {t("job_list.title")}
       </Typography>
 
       <Box sx={{ flexGrow: 1 }}>
