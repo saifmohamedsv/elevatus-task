@@ -19,7 +19,7 @@ export const Navbar: FC<NavbarProps> = () => {
               onClick={() => navigate({ pathname: "/" })}
               variant="h6"
               component="div"
-              sx={{ flexGrow: 1 }}
+              sx={{ cursor: "pointer", flexGrow: 1 }}
             >
               {t("navbar.title")}
             </Typography>

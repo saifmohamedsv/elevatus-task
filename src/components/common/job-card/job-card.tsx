@@ -9,17 +9,23 @@ import {
 } from "@mui/material";
 import { FC } from "react";
 import { useTranslation } from "react-i18next";
+import { useNavigate } from "react-router-dom";
 import { Job } from "../../../types/job";
 import styles from "./job-card.module.css";
 
 interface JobCardProps extends Job {}
 
-const JobCard: FC<JobCardProps> = ({ title, location, career_level }) => {
+const JobCard: FC<JobCardProps> = ({ title, location, career_level, uri }) => {
   const city = location.city || "No city to show";
   const { t } = useTranslation();
+  const navigate = useNavigate();
 
   return (
-    <Card className={styles.card} elevation={0}>
+    <Card
+      onClick={() => navigate({ pathname: `/job/${uri}` })}
+      className={styles.card}
+      elevation={0}
+    >
       <CardContent>
         <Typography sx={{ fontSize: 18 }} color="text.primary">
           {title}
@@ -35,7 +41,11 @@ const JobCard: FC<JobCardProps> = ({ title, location, career_level }) => {
         </Box>
       </CardContent>
       <CardActions>
-        <Button variant="outlined" size="medium">
+        <Button
+          onClick={() => navigate({ pathname: `/job/${uri}` })}
+          variant="outlined"
+          size="medium"
+        >
           {t("job_list.action-button-text")}
         </Button>
       </CardActions>
