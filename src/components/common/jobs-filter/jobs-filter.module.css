@@ -8,6 +8,11 @@
   gap: 1rem;
 }
 
+.jobsfilter button {
+  border-radius: 0.5rem;
+  padding: 10px 20px;
+}
+
 @media (max-width: 768px) {
   .jobsfilter {
     flex-direction: column;

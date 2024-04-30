@@ -27,12 +27,12 @@ export const JobsList: FC<Props> = () => {
 
   return (
     <Container maxWidth="xl">
-      <Typography variant="h4" my={4} fontWeight={900}>
+      <Typography mb={4} mt={2} fontWeight={600} sx={{ fontSize: 28 }}>
         Recent Openings
       </Typography>
 
       <Box sx={{ flexGrow: 1 }}>
-        <Grid container spacing={2}>
+        <Grid container spacing={4}>
           {(isLoading ? Array.from(new Array(20)) : jobs).map((job, idx) => (
             <Grid item xs={12} sm={6} md={4} lg={3}>
               {job && <JobCard {...job} />}

@@ -17,12 +17,11 @@ const JobCard: FC<JobCardProps> = ({ title, location, career_level }) => {
   const city = location.city || "No city to show";
 
   return (
-    <Card className={styles.card} elevation={0} sx={{ width: 320, p: 2 }}>
+    <Card className={styles.card} elevation={0}>
       <CardContent>
-        <Typography sx={{ fontSize: 18 }} color="text.primary" gutterBottom>
+        <Typography sx={{ fontSize: 18 }} color="text.primary">
           {title}
         </Typography>
-
         <Box my={4}>
           <Typography sx={{ fontSize: 14 }} variant="h6">
             {city}
@@ -34,7 +33,7 @@ const JobCard: FC<JobCardProps> = ({ title, location, career_level }) => {
         </Box>
       </CardContent>
       <CardActions>
-        <Button variant="contained" size="small">
+        <Button variant="outlined" size="medium">
           View
         </Button>
       </CardActions>

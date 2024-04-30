@@ -1,4 +1,3 @@
-import { Search } from "@mui/icons-material";
 import { Button, Container, TextField } from "@mui/material";
 import { FC, useState } from "react";
 import { updateSearchTerm } from "../../../features/search/searchSlice";
@@ -24,11 +23,7 @@ export const JobsFilter: FC<JobsFilterProps> = () => {
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
         />
-        <Button
-          variant="contained"
-          startIcon={<Search />}
-          onClick={handleSearch}
-        >
+        <Button variant="contained" onClick={handleSearch}>
           Search
         </Button>
       </div>
